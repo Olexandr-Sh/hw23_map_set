@@ -94,15 +94,17 @@ console.log(evenNumSet);
 // for (let i = 0, sum = 0; i < evenNumSet.length; sum += evenNumSet[i++]);
 // console.log(sum);
 
-function sumSet(arr) {
-  for (
-    let index = 0,
-    length = arr.length,
-    sum = 0;
-    index < length;
-    sum += arr[index++]
-  );
-  return sum;
+let sum = 0;
+for (let element of evenNumSet) {
+  sum += element;
 }
+console.log(sum);
 
-sumSet(arr)
+
+
+
+
+
+
+
+

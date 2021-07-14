@@ -19,19 +19,15 @@ let thirdUser = [
 ];
 
 let users = [
-  [firstUser],
-  [secondUser],
-  [thirdUser],
+  [firstUser, 'info about first user'],
+  [secondUser, 'info about second user'],
+  [thirdUser, 'info about third user'],
 ]
 
 let map = new Map(users);
 console.log(map);
 
 for (let [key, value] of map) {
-  console.log(key + ' = ' + value);
-};
-
-for (let [key, value] of map.entries()) {
   console.log(key + ' = ' + value);
 };
 
@@ -64,3 +60,49 @@ for (let value of secondMap.values()) {
 }
 
 console.log(secondMap.size);
+
+let arr = [];
+while (arr.length < 10) {
+  let numbersList = Math.floor(Math.random() * 100)+1;
+  arr[arr.length] = numbersList;
+}
+
+// while (arr.length < 10) {
+  // let arrSet = new Set(arr);
+  // 
+// }
+// console.log(arr);
+
+let mySet = new Set(arr);
+console.log(mySet);
+
+let evenNumSet = new Set(arr.filter(x => x % 2 === 0));
+console.log(evenNumSet);
+
+// let sumNumSet = evenNumSet.sum();
+// console.log(sumNumSet);
+
+
+// function setSum(evenNumSet) {
+  // let sum = 0;
+  // for (let i = 0; i < evenNumSet.length; i++) {
+    // sum += evenNumSet[i];
+  // } return sum;
+// };
+// console.log(setSum(evenNumSet));
+
+// for (let i = 0, sum = 0; i < evenNumSet.length; sum += evenNumSet[i++]);
+// console.log(sum);
+
+function sumSet(arr) {
+  for (
+    let index = 0,
+    length = arr.length,
+    sum = 0;
+    index < length;
+    sum += arr[index++]
+  );
+  return sum;
+}
+
+sumSet(arr)
